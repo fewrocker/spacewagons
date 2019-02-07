@@ -1,6 +1,5 @@
 class PlayersController < ApplicationController
 	def index
-    # Get all users minus the NPC (Jabba)
 		@users = User.all
 	end
 
