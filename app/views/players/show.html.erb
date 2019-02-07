@@ -4,8 +4,8 @@
       <h1 class="pilot-license-title text-center" id="title-enhancement">Pilot license</h1>
       <div class="pilot-license-flex">
         <div class="pilot-picture">
-          <% if !current_user.photos.last.nil? %>
-            <%= cl_image_tag(current_user.photos.last.photo.file.public_id, :width=>250, :height=>250, :gravity=>"faces", :crop=>"fill", class:"img-avatar img-circle") %>
+          <% if !@user.photos.last.nil? %>
+            <%= cl_image_tag(@user.photos.last.photo.file.public_id, :width=>250, :height=>250, :gravity=>"faces", :crop=>"fill", class:"img-avatar img-circle") %>
           <% else %>
               <%= image_tag "avatar-none.jpg", class:"img-avatar img-circle" %>
           <% end %>
