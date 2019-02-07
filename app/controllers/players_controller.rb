@@ -33,7 +33,7 @@ class PlayersController < ApplicationController
     end
 
     last_race = Race.last
-    @race_ok = !last_race.nil?
+    @race_ok = last_race.runners.include?(@user.id)
     if @race_ok
       @last_race_no_users = Race.last.runners.length
       @last_race_standing = last_race.final_results.sort.reverse.index(last_race.final_results[last_race.runners.index(@user.id)]) + 1
